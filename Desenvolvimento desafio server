@@ -1,6 +1,8 @@
 from socket import *
 import time
 import random
+import pickle
+import os
 
 
 host = gethostname()
@@ -15,7 +17,14 @@ print(f'HOST: {host} , PORT {port}')
 while 1:
   con,adr = serv.accept()
   while 1:
-   valor = int(0)
+    try:
+       valor = pickle.load(open("valor.dat", "rb"))
+    if NameError:
+       valor = 0
+    else:
+       valor = valor
+
+   pickle.dump(v, open("v.dar", "wb"))
    r_num = int(1)
    t = con.recv(1024)
    if t = True:
@@ -26,20 +35,6 @@ while 1:
    valor = con.recv(1024) #receber informação
    print(valor)
   
-   
-import pickle
-import os
-
-try:
-  v = pickle.load(open("v.dat", "rb"))
-  if NameError:
-    v = 0
-  else:
-    v = v
-
-  print(v)
-  v = v + 1
-  pickle.dump(v, open("v.dar", "wb"))
 
 
    
