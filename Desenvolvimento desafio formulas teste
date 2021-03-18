@@ -1,0 +1,62 @@
+#teste server
+from socket import *
+
+host = gethostname()
+port = 55541
+
+print(f'HOST: {host} , PORT {port}')
+
+serv = socket(AF_INET, SOCK_STREAM)
+serv.bind((host, port))
+serv.listen(5)
+
+while 1:
+  con,adr = serv.accept()
+  while 1:
+    msg = con.recv(1024) #receber informação
+    print(msg.decode())
+    
+    
+    
+    
+    #teste cliente
+from socket import *
+
+host = gethostname()
+port = 55541
+
+cli = socket(AF_INET, SOCK_STREAM)
+cli.connect((host, port))
+
+while 1:
+  msg = input("digite: ")
+  cli.send(msg.encode()) # enviar informação
+  
+  
+  
+
+#teste timers
+import time
+import random
+while 1:
+  start = time.perf_counter()
+  while time.perf_counter() - start < 10:
+    t = True
+    print(t)
+    
+    
+    
+import time
+import random
+while 1:
+  for i in range(5):
+    print(i)
+    time.sleep(1)
+    
+    
+    
+#teste numeros aleatorios
+import random
+
+r_num = random.randint(0,100)
+print(r_num)    
