@@ -1,6 +1,8 @@
 from socket import *
 import time
 import random
+import pickle
+import os
 
 host = gethostname()
 port = 12345
