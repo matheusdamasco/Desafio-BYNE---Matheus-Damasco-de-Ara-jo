@@ -1,0 +1,24 @@
+from socket import *
+import time
+import random
+
+host = gethostname()
+port = 12345
+
+cli = socket(AF_INET, SOCK_STREAM)
+cli.connect((host, port))
+
+while 1:
+    cli.send(t)
+    t = False
+    cli.send(t)
+    valor = con.recv(1024) #receber informação
+    r_num = con.recv(1024)
+    print(valor)
+    valor = valor + r_num
+    time.sleep(0.5)
+    cli.send(valor)
+
+  start = time.perf_counter()
+  while time.perf_counter() - start < random.uniform(3,5):
+    t = True
