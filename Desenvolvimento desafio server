@@ -1,0 +1,28 @@
+from socket import *
+import time
+import random
+
+
+host = gethostname()
+port = 12345
+
+serv = socket(AF_INET, SOCK_STREAM)
+serv.bind((host, port))
+serv.listen(5)
+
+print(f'HOST: {host} , PORT {port}')
+
+while 1:
+  con,adr = serv.accept()
+  while 1:
+   valor = int(0)
+   r_num = int(1)
+   t = con.recv(1024)
+   if t = True:
+     r_num = random.randint(0,100)
+     t = False
+   serv.send(valor) # enviar informação
+   serv.send(r_num)
+   valor = con.recv(1024) #receber informação
+   print(valor)
+  
