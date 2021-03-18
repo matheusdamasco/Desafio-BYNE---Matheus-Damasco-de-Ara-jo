@@ -60,3 +60,19 @@ import random
 
 r_num = random.randint(0,100)
 print(r_num)    
+
+
+#teste memoria
+import pickle
+import os
+
+try:
+  v = pickle.load(open("v.dat", "rb"))
+  if NameError:
+    v = 0
+  else:
+    v = v
+
+  print(v)
+  v = v + 1
+  pickle.dump(v, open("v.dar", "wb"))
