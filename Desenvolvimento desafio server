@@ -26,3 +26,8 @@ while 1:
    valor = con.recv(1024) #receber informação
    print(valor)
   
+   
+   
+   
+   
+   
