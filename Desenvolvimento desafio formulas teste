@@ -1,5 +1,5 @@
 #teste server
-from socket import *
+import socket
 
 host = gethostname()
 port = 55541
